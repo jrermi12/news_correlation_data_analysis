@@ -156,10 +156,9 @@ def normalize_and_standardize(df_data, df_domains_location, df_traffic):
     return df_data, df_domains_location, df_traffic
 
 
+df_data, df_traffic, df_domains_location = load_data()
 
-def clean_data():
-
-    df_data, df_traffic, df_domains_location = load_data()
+def clean_data(df_data, df_domains_location, df_traffic):
 
     # Apply missing value handling
     df_data, df_domains_location = handle_missingvalue(df_data, df_domains_location)
@@ -173,4 +172,4 @@ def clean_data():
     # Return cleaned DataFrames
     return df_data, df_domains_location, df_traffic
 
-df_data_cleaned, df_domains_location_cleaned, df_traffic_cleaned = clean_data()
+df_data_cleaned, df_domains_location_cleaned, df_traffic_cleaned = clean_data(df_data, df_domains_location, df_traffic)
